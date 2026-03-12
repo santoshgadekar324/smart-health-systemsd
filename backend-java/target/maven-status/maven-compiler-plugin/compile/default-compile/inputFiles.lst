@@ -1,0 +1,14 @@
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\controllers\DoctorAdminControllers.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\security\JwtUtils.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\repositories\Repositories.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\services\PredictionService.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\controllers\PatientController.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\controllers\AuthController.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\models\Prediction.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\models\Appointment.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\models\HealthModels.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\models\User.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\security\SecurityConfig.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\models\Doctor.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\SmartHealthApplication.java
+S:\Users\Santu Gadekar\Documents\smart-health-system\backend-java\src\main\java\com\smarthealth\dto\Dtos.java

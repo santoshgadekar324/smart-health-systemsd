@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — SmartHealth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+<div class="auth-split">
+  <!-- Left panel -->
+  <div class="auth-left d-none d-lg-flex">
+    <div class="auth-left-content">
+      <a href="index.html" class="sh-brand mb-5"><span class="brand-icon">⚕</span> SmartHealth</a>
+      <h2>Your health,<br/>intelligently managed.</h2>
+      <p class="mt-3 opacity-75">AI-powered disease predictions and seamless doctor booking.</p>
+      <div class="auth-features mt-5">
+        <div class="auth-feat"><i class="bi bi-cpu-fill"></i> AI symptom analysis</div>
+        <div class="auth-feat"><i class="bi bi-calendar-check"></i> Instant appointment booking</div>
+        <div class="auth-feat"><i class="bi bi-shield-check"></i> Secure medical records</div>
+      </div>
+    </div>
+  </div>
+  <!-- Right panel (form) -->
+  <div class="auth-right">
+    <div class="auth-form-wrap">
+      <h3 class="auth-form-title">Welcome back</h3>
+      <p class="auth-form-sub">Login to your account</p>
+
+      <div id="alertBox" class="alert d-none"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="mb-3">
+          <label class="form-label">Email Address</label>
+          <div class="input-group sh-input-group">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input type="email" id="email" class="form-control" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="form-label">Password</label>
+          <div class="input-group sh-input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input type="password" id="password" class="form-control" placeholder="••••••••" required />
+            <button class="btn btn-outline-secondary" type="button" id="togglePwd">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="btn sh-btn-primary w-100 btn-lg" id="loginBtn">
+          <span class="btn-text">Login</span>
+          <span class="spinner-border spinner-border-sm d-none" id="loginSpinner"></span>
+        </button>
+      </form>
+
+      <div class="auth-divider">or</div>
+
+      <!-- Quick demo logins -->
+      <div class="demo-logins">
+        <p class="text-center text-muted small mb-2">Quick demo login</p>
+        <div class="d-flex gap-2">
+          <button class="btn sh-btn-demo flex-fill" onclick="demoLogin('patient')">Patient</button>
+          <button class="btn sh-btn-demo flex-fill" onclick="demoLogin('doctor')">Doctor</button>
+          <button class="btn sh-btn-demo flex-fill" onclick="demoLogin('admin')">Admin</button>
+        </div>
+      </div>
+
+      <p class="text-center mt-4">Don't have an account? <a href="register.html" class="sh-link">Register</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  // Toggle password visibility
+  document.getElementById('togglePwd').addEventListener('click', () => {
+    const pwd = document.getElementById('password');
+    const icon = document.querySelector('#togglePwd i');
+    pwd.type = pwd.type === 'password' ? 'text' : 'password';
+    icon.className = pwd.type === 'password' ? 'bi bi-eye' : 'bi bi-eye-slash';
+  });
+
+  // Form submit
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const btn = document.getElementById('loginBtn');
+    const spinner = document.getElementById('loginSpinner');
+
+    btn.disabled = true;
+    spinner.classList.remove('d-none');
+
+    try {
+      const res = await API.login(email, password);
+      if (res.success) {
+        showAlert('Login successful! Redirecting…', 'success');
+        setTimeout(() => redirectByRole(res.data.role), 800);
+      } else {
+        showAlert(res.message || 'Login failed.', 'danger');
+      }
+    } catch (err) {
+      showAlert('Network error. Is the backend running?', 'danger');
+    } finally {
+      btn.disabled = false;
+      spinner.classList.add('d-none');
+    }
+  });
+
+  function demoLogin(role) {
+    const creds = {
+      patient: { email: 'patient@demo.com', password: 'Demo@1234' },
+      doctor:  { email: 'doctor@demo.com',  password: 'Demo@1234' },
+      admin:   { email: 'admin@smarthealth.com', password: 'Admin@123' },
+    };
+    document.getElementById('email').value    = creds[role].email;
+    document.getElementById('password').value = creds[role].password;
+  }
+
+  function showAlert(msg, type) {
+    const box = document.getElementById('alertBox');
+    box.className = `alert alert-${type}`;
+    box.textContent = msg;
+    box.classList.remove('d-none');
+  }
+
+  function redirectByRole(role) {
+    const map = { PATIENT: 'patient-dashboard.html', DOCTOR: 'doctor-dashboard.html', ADMIN: 'admin-dashboard.html' };
+    window.location.href = map[role] || 'index.html';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartHealth — AI Diagnosis & Appointments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ───────── NAVBAR ───────── -->
+<nav class="navbar navbar-expand-lg sh-nav sticky-top">
+  <div class="container">
+    <a class="navbar-brand sh-brand" href="index.html">
+      <span class="brand-icon">⚕</span> SmartHealth
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="btn sh-btn-primary" href="register.html">Get Started</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────── HERO ───────── -->
+<section class="sh-hero">
+  <div class="hero-bg-grid"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-6">
+        <div class="hero-badge">AI-Powered Healthcare</div>
+        <h1 class="hero-title">
+          Intelligent<br/>
+          <span class="hero-accent">Health Diagnosis</span><br/>
+          At Your Fingertips
+        </h1>
+        <p class="hero-sub">
+          Describe your symptoms, receive AI-powered disease predictions in seconds,
+          and book appointments with specialist doctors — all in one platform.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="register.html" class="btn sh-btn-primary btn-lg">
+            <i class="bi bi-heart-pulse me-2"></i> Start Diagnosis
+          </a>
+          <a href="#how-it-works" class="btn sh-btn-outline btn-lg">How It Works</a>
+        </div>
+        <div class="hero-stats mt-5">
+          <div class="hero-stat"><span>22+</span><small>Diseases Detected</small></div>
+          <div class="hero-stat"><span>30</span><small>Symptom Inputs</small></div>
+          <div class="hero-stat"><span>AI</span><small>ML-Powered</small></div>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+        <div class="hero-card-stack">
+          <div class="hero-float-card card-pulse">
+            <i class="bi bi-activity"></i>
+            <div>
+              <div class="fc-label">AI Diagnosis</div>
+              <div class="fc-val">Influenza — 87% confidence</div>
+            </div>
+          </div>
+          <div class="hero-float-card card-appt">
+            <i class="bi bi-calendar-check"></i>
+            <div>
+              <div class="fc-label">Appointment Booked</div>
+              <div class="fc-val">Dr. Sharma · Mar 14, 10:00 AM</div>
+            </div>
+          </div>
+          <div class="hero-float-card card-spec">
+            <i class="bi bi-person-badge"></i>
+            <div>
+              <div class="fc-label">Recommended Specialist</div>
+              <div class="fc-val">General Physician</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FEATURES ───────── -->
+<section class="sh-section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-chip">Features</div>
+      <h2 class="section-title">Everything You Need</h2>
+      <p class="section-sub">From AI diagnosis to specialist booking — one seamless experience.</p>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4">
+        <div class="sh-feature-card">
+          <div class="feat-icon fc-teal"><i class="bi bi-cpu"></i></div>
+          <h5>AI Symptom Analysis</h5>
+          <p>Machine learning model trained on clinical symptom patterns predicts likely diseases with confidence scores.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sh-feature-card">
+          <div class="feat-icon fc-blue"><i class="bi bi-calendar3"></i></div>
+          <h5>Smart Appointment Booking</h5>
+          <p>Browse verified doctors by specialization, check real-time availability, and book slots instantly.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sh-feature-card">
+          <div class="feat-icon fc-violet"><i class="bi bi-shield-check"></i></div>
+          <h5>Role-Based Access</h5>
+          <p>Separate dashboards for Patients, Doctors, and Admins with JWT-secured endpoints.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sh-feature-card">
+          <div class="feat-icon fc-rose"><i class="bi bi-clock-history"></i></div>
+          <h5>Prediction History</h5>
+          <p>All your past symptom checks and diagnosis predictions are stored securely for future reference.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sh-feature-card">
+          <div class="feat-icon fc-amber"><i class="bi bi-graph-up-arrow"></i></div>
+          <h5>Admin Analytics</h5>
+          <p>Real-time dashboards showing top diseases, appointment volumes, and user statistics.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sh-feature-card">
+          <div class="feat-icon fc-green"><i class="bi bi-lock"></i></div>
+          <h5>Secure by Design</h5>
+          <p>BCrypt password hashing, JWT tokens, input validation, and SQL injection protection built in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── HOW IT WORKS ───────── -->
+<section class="sh-section sh-section-alt" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-chip">Process</div>
+      <h2 class="section-title">How It Works</h2>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-10">
+        <div class="steps-row">
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div class="step-icon"><i class="bi bi-person-plus"></i></div>
+            <h6>Register</h6>
+            <p>Create a free patient account in seconds.</p>
+          </div>
+          <div class="step-arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div class="step-icon"><i class="bi bi-list-check"></i></div>
+            <h6>Enter Symptoms</h6>
+            <p>Select from 30 clinical symptoms.</p>
+          </div>
+          <div class="step-arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div class="step-icon"><i class="bi bi-cpu-fill"></i></div>
+            <h6>AI Diagnosis</h6>
+            <p>Random Forest model predicts disease instantly.</p>
+          </div>
+          <div class="step-arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="step-item">
+            <div class="step-num">04</div>
+            <div class="step-icon"><i class="bi bi-calendar-check-fill"></i></div>
+            <h6>Book Doctor</h6>
+            <p>Find & book the recommended specialist.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── CTA ───────── -->
+<section class="sh-cta">
+  <div class="container text-center">
+    <h2>Ready to take control of your health?</h2>
+    <p class="mt-3 mb-4 opacity-75">Join thousands of patients getting faster, smarter healthcare.</p>
+    <a href="register.html" class="btn sh-btn-primary btn-lg me-3">Create Free Account</a>
+    <a href="login.html" class="btn sh-btn-outline btn-lg">Login</a>
+  </div>
+</section>
+
+<!-- ───────── FOOTER ───────── -->
+<footer class="sh-footer">
+  <div class="container text-center">
+    <div class="sh-brand mb-3"><span class="brand-icon">⚕</span> SmartHealth</div>
+    <p class="mb-0 opacity-50">© 2024 SmartHealth. AI-powered health diagnosis and appointment system.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
